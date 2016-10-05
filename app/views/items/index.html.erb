@@ -1,0 +1,9 @@
+<h1>List of Items</h1>
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <h2><%= link_to item.title, item %></h2>
+      <h3>$ <%= item.price %></h3>
+    </li><br>
+  <% end %>
+</ul>

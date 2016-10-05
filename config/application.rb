@@ -17,7 +17,10 @@ module RailsFlatironStore
   class Application < Rails::Application
 
     config.generators do |g|
-      g.test_framework  nil #to skip test framework
+      g.test_framework false #to skip test framework
+      g.assets false
+      g.helper false
+      g.stylesheets false
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

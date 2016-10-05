@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
+
+  resources :orders, only: [:show]
+
   root 'store#index', as: 'store'
 
   resources :items, only: [:show, :index]

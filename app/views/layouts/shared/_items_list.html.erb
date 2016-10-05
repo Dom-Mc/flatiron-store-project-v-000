@@ -1,0 +1,16 @@
+<% available_items.each do |item| %>
+  <p>
+    <%= item.title %><br>
+
+    <% if item.inventory < 5 %>
+      <strong>There are only <%= item.inventory %> left in stock.</strong><br>
+    <% end %>
+
+    <%= number_to_currency(item.price.to_f/100) %><br>
+
+    <% if current_user %>
+      <%= button_to 'Add to Cart', line_items_path(item_id: item) %>
+    <% end %>
+
+  </p><br>
+<% end %>
